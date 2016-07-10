@@ -1,1 +1,1 @@
-BluetoothScanner
+BuetoothScanner
