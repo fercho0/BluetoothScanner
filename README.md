@@ -17,11 +17,13 @@ Iremos sobre las bases para conectar y enviar datos a otro dispositivo Bluetooth
 
 Antes de que podamos habilitar Bluetooth en un dispositivo Android, necesitamos requerir los permisos necesarios. Hacemos ésto en el manifiesto de la aplicación. El permiso BLUETOOTH deja que nuestra aplicación se conecte, se desconecte, y transfiera datos con otro disositivo Bluetooth. El permiso [BLUETOOTH_ADMIN](https://developer.android.com/reference/android/Manifest.permission.html) deja que nuestra aplicación descubra nuevos dispositivos Bluetooth y cambia los ajustes sobre Bluetooth del dispositivo.
 
+```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tutsplus.matt.bluetoothscanner" >
      
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+```
 
 Usaremos el adaptador Bluetooth para conectarse mediante interfaz con Bluetooth. Instanciamos el adaptador en la clase ListActivity. Si el adaptador es null, ésto significa que Bluetooth no es soportado por el dispositivo y la aplicación no funcionará en el dispositivo actual. Manejamos ésta situación mostrando un diálogo de alerta al usuario y saliendo de la aplicación.
 
