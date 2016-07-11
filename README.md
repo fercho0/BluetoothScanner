@@ -24,10 +24,10 @@ Antes de que podamos habilitar Bluetooth en un dispositivo Android, necesitamos 
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
 Usaremos el adaptador Bluetooth para conectarse mediante interfaz con Bluetooth. Instanciamos el adaptador en la clase ListActivity. Si el adaptador es null, ésto significa que Bluetooth no es soportado por el dispositivo y la aplicación no funcionará en el dispositivo actual. Manejamos ésta situación mostrando un diálogo de alerta al usuario y saliendo de la aplicación.
-´´´
+
+```java
 @Override
 protected void onCreate(Bundle savedInstanceState) {
-...
     BTAdapter = BluetoothAdapter.getDefaultAdapter();
     // Phone does not support Bluetooth so let the user know and exit.
     if (BTAdapter == null) {
@@ -43,4 +43,4 @@ protected void onCreate(Bundle savedInstanceState) {
                 .show();
     }
 }
-´´´
+```
